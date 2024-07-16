@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{websiteName}} - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+
+    {% block bodyContent %}
+    <section class="loginForm">
+
+        <div class="container">
+            <div class="signin-wrapper">
+                <h2 class="heading2">Sign In With</h2>
+                <div class="social-signin">
+                    <button class="fb">Facebook</button>
+                    <button class="gg">Google</button>
+                </div>
+
+                <form method="POST">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" name="password" id="password">
+                            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+                        </div>
+
+                        <a href="#" class="forget">Forget?</a>
+
+                    </div>
+
+                    <button type="submit" class="signin-btn">Sign In</button>
+                </form>
+
+                <div class="singup-link">
+                    not a member? <a href="#">Sign up now</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleIcon = document.querySelector(".toggle-password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = '🙈';
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "👁️";
+            }
+
+
+        }
+    </script>
+
+    {% endblock %}
+
+
+</body>
+
+</html>

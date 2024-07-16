@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="brandName">{{websiteName}}</h1>
+        <div class="navigationLinks">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Customer Care</li>
+            <li><input type="search"></li>
+            <li>🛒</li>
+            <li>Profile</li>
+        </div>
+    </nav>
+
+    {% block bodyContent %}
+    {% endblock %}
+
+
+    <footer class="ft">
+        <p>&copy; 2024 {{websiteName}}. All rights reserverd.</p>
+    </footer>
+
+
+</body>

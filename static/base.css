@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+ 
+.navbar{
+    display: flex;
+    background: #17153B;
+    color: white;
+    padding: 15px 20px;
+}
+
+body{
+    margin: 0;
+
+}
+    
+.brandName{
+    font-family: "Rowdies", monospace;
+    margin: 0;
+}
+
+.navigationLinks{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    padding-left: 5%;
+    padding-top: .5%;
+    justify-content: right;
+}
+
+
+.navigationLinks li{
+    font-size: 18px;
+    font-weight: bold;
+}
+.navigationLinks li+li{
+    margin-left: 20px;
+}
+
+
+
+.ft{
+    background-color: #17153B;
+    color: white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+.ft p{
+    margin: 0;
+}
