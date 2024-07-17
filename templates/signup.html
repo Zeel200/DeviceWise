@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{websiteName}} - Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='signup.css')}}">
 </head>
 
 <body>
-    {% extends 'base.html' %}
-
+    {%extends 'base.html' %}
 
     {% block bodyContent %}
     <section class="loginForm">
 
         <div class="container">
-            <div class="signin-wrapper">
-                <h2 class="heading2">Sign In With</h2>
-                <div class="social-signin">
+            <div class="signup-wrapper">
+                <h2 class="heading2">Sign Up With</h2>
+                <div class="social-signup">
                     <button class="fb">Facebook</button>
                     <button class="gg">Google</button>
                 </div>
 
                 <form method="POST">
+                    <div class="input-group-nested">
+                        <div class="first">
+                            <label for="first-name">First-Name</label>
+                            <input type="text" name="first-name" id="first-name">
+                        </div>
+                        <div class="second">
+                            <label for="last-name">Last-Name</label>
+                            <input type="text" name="last-name" id="last-name">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </div>
                     <div class="input-group">
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username">
@@ -35,15 +53,13 @@
                             <span class="toggle-password" onclick="togglePassword()">👁️</span>
                         </div>
 
-                        <a href="#" class="forget">Forget?</a>
-
                     </div>
 
-                    <button type="submit" class="signin-btn">Sign In</button>
+                    <button type="submit" class="signup-btn">Sign Up</button>
                 </form>
 
-                <div class="singup-link">
-                    not a member? <a href="/signup">Sign up now</a>
+                <div class="singin-link">
+                    Already a member? <a href="/login">Log in now</a>
                 </div>
             </div>
 
@@ -68,9 +84,7 @@
         }
     </script>
 
-    {% endblock %}
-
-
+    {%endblock %}
 </body>
 
 </html>

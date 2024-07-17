@@ -1,5 +1,3 @@
-
-
 import dotenv
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
@@ -71,6 +69,10 @@ def logout():
 def nav():
     return render_template("navbar.html")
 
+
+@webapp.route("/signup")
+def signup():
+    return render_template("signup.html", websiteName = WEBSITE_NAME)
 
 if __name__ == '__main__':
     webapp.run(port=5501, debug=True)

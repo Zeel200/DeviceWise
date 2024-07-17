@@ -1,0 +1,159 @@
+* {
+    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+
+.loginForm {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+    max-width: 95%;
+}
+
+.heading2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.social-signup {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.social-signup button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: 40%;
+}
+
+.fb {
+    background-color: #3b5998;
+}
+
+.gg {
+    background-color: #DB4437;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group-nested input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.signup-wrapper {
+    padding: 40px;
+}
+
+.input-group label,
+.input-group-nested label {
+
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+
+.forget {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.signup-btn {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+.singin-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.singin-link a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+button {
+    transition: background 0.3s;
+}
+
+button:hover {
+    opacity: .8;
+}
+
+.singin-link a:hover {
+    text-decoration: underline;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    ;
+}
+
+.password-wrapper input {
+    padding-right: 40%;
+}
+
+.toggle-password {
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.input-group-nested {
+    display: flex;
+}
+
+.input-group-nested .first {
+    width: 100%;
+    padding-right: 5px;
+}
+
+.input-group-nested .second {
+    padding-left: 5px;
+}
