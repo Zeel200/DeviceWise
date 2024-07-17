@@ -6,13 +6,18 @@
     <nav class="navbar">
         <h1 class="brandName">{{websiteName}}</h1>
         <div class="navigationLinks">
-            <li>Home</li>
-            <li>Shop</li>
-            <li>About</li>
-            <li>Customer Care</li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="/help">Customer Care</a></li>
             <li><input type="search"></li>
             <li>🛒</li>
-            <li>Profile</li>
+            {% if LOGGEDIN%}
+                <li>Profile</li>
+            {%else%}
+            <li><button class="btn signup"> <a href="/signup">Sign Up</a></button></li>
+            <li><button class="btn login"> <a href="/login">Log In</a></button></li>
+            {%endif%}
         </div>
     </nav>
 

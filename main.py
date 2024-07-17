@@ -20,10 +20,11 @@ def h():
 
 @webapp.route("/home")
 def home():
-    if session.get("LOGGEDIN") is not None:
-        return render_template("homePage.html", username=session.get('username'), websiteName=WEBSITE_NAME)
-    else:
-        return redirect(url_for("login"))
+    return render_template("homePage.html",
+                            username=session.get('username'), 
+                            websiteName=WEBSITE_NAME, 
+                            LOGGEDIN=session.get('LOGGEDIN'))
+    
 
 
 @webapp.route("/about") # about route,
@@ -44,7 +45,7 @@ def login():
             if username:          
                 user = utils.get_user(username)
                 if not user:
-                    return render_template("login.html", websiteName = WEBSITE_NAME)
+                    return render_template("login.html", websiteName = WEBSITE_NAME,  LOGGEDIN=False)
                 
 
 
@@ -70,9 +71,31 @@ def nav():
     return render_template("navbar.html")
 
 
-@webapp.route("/signup")
+@webapp.route("/signup", methods= ["GET", "POST"])
 def signup():
-    return render_template("signup.html", websiteName = WEBSITE_NAME)
+
+    if request.method == "GET":
+        if session.get("LOGGEDIN"):
+            return redirect(url_for("home"))
+        else:
+            return render_template("signup.html", websiteName = WEBSITE_NAME,  LOGGEDIN=False)
+    elif request.method == "POST":
+        fName = (request.form.get("first-name")) #required
+        lName = request.form.get("last-name")
+        email = (request.form.get("email")) #required
+        phone = (request.form.get("phone")) #required
+        username = (request.form.get("username")) #required
+        password = (request.form.get("password")) #required
+
+        user = utils.User(fName, lName, email, phone, username, password)
+        user.save_tofile()
+
+        session["LOGGEDIN"] = True
+        session["username"] = username
+
+        return redirect(url_for("home"))
+
+
 
 if __name__ == '__main__':
     webapp.run(port=5501, debug=True)
