@@ -6,3 +6,5 @@ testing/*
 test.py
 
 .DS_Store
+
+*.dio
