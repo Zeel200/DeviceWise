@@ -1,3 +1,6 @@
+## TO RUN THIS
+# python main.py
+
 import dotenv
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
@@ -16,7 +19,7 @@ webapp.secret_key = os.getenv("SECRET_KEY")
 
 @webapp.route('/')
 def h():
-    return redirect(url_for("login"))
+    return redirect(url_for("home"))
 
 @webapp.route("/home")
 def home():
@@ -27,9 +30,6 @@ def home():
     
 
 
-@webapp.route("/about") # about route,
-def about(): # what ever we have to show on /about we will return that from this function
-    return "Hey I am zeel patel, akdjajhsdkjh...."
 
 @webapp.route("/login", methods=["GET", "POST"])
 def login():
@@ -95,7 +95,13 @@ def signup():
 
         return redirect(url_for("home"))
 
+@webapp.route("/about") # about route,
+def about(): # what ever we have to show on /about we will return that from this function
+    return render_template("about.html")
+
+
 
 
 if __name__ == '__main__':
-    webapp.run(port=5501, debug=True)
+    webapp.run(host="0.0.0.0", port=5501, debug=True)
+

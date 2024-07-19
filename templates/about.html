@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='about.css')}}">
+    <meta charset="UTF-8">
+    <title>About us</title>
+</head>
+
+<body>
+    {%extends 'base.html' %}
+
+    {% block bodyContent %}
+    <div class="about_main">
+        <h1 class="page-title">ABOUT US</h1>
+        <hr>
+        <p>Welcome to DeviceWise, a cutting-edge online auction platform dedicated to bringing buyers and sellers of
+            used electronic devices together. Our mission is to simplify the process of selling your old gadgets while
+            ensuring buyers get the best deals on quality products. Whether you're looking to auction off a laptop,
+            phone, TV, or gaming console, our platform provides an intuitive and efficient solution for all your needs.
+        </p>
+
+        <div class="process">
+            <br>
+            <h2 class="HowItWork">How It Works?</h2>
+            <hr>
+            <h4 id="step-one">Step 1: List Your Device</h4>
+            <li>Start by selecting the company, model, year, and storage of your device.</li>
+            <li>Our intuitive interface ensures you provide all necessary details easily.</li>
+            <br>
+            <h4 id="step-two">Step 2: Market Value Estimation</h4>
+            <li>We generate the minimum current market value of your device.</li>
+            <li>Use this suggested price as the starting point for your auction to attract potential buyers.</li>
+            <br>
+            <h4 id="step-three">Step 3: Create Your Auction</h4>
+            <li>Give your auction a unique name or title.</li>
+            <li>Set the end date and time for your auction, then click POST to go live.</li>
+            <br>
+            <h4 id="step-four">Step 4: Get Notified</h4>
+            <li>Stay updated with every bid on your auction through email notifications.</li>
+            <li>Enable text message alerts for real-time updates if desired.</li>
+            <br>
+            <h4 id="step-five">Step 5: Finalizing the Sale</h4>
+            <li>When the auction closes, the highest bid wins.</li>
+            <li>If the buyer opts for doorstep delivery, they can enter their shipping details.</li>
+            <li>We provide shipping charges, with FREE shipping for bids over $1,000.</li>
+            <li>As the auction owner, choose between our company-provided shipping service or arrange your own.</li>
+        </div>
+
+        <div>
+            <br>
+            <h2 class="Why-Us">Why Choose Us?</h2>
+            <hr>
+            <li>User-Friendly Interface: Our platform is designed to make listing and bidding straightforward and
+                hassle-free.</li>
+            <li>Accurate Market Value: Get a reliable estimate of your device’s worth, ensuring fair starting prices
+            </li>
+            <li>Real-Time Notifications: Stay informed of all bids and auction updates through email and optional text
+                alerts.</li>
+            <li>Flexible Shipping Options: Enjoy free shipping on high-value items and choose between our shipping
+                services or your own.</li>
+            <br>
+        </div>
+    </div>
+    {% endblock %}
+</body>
